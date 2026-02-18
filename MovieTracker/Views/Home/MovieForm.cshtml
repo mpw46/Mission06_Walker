@@ -31,10 +31,10 @@
     <input asp-for="Year" required />
     <br />
     <label asp-for="Director">Director</label>
-    <input asp-for="Director" required />
+    <input asp-for="Director" />
     <br />
     <label asp-for="Rating">Rating</label>
-    <select asp-for="Rating" required>
+    <select asp-for="Rating" >
         <option value="G">G</option>
         <option value="PG">PG</option>
         <option value="PG-13">PG-13</option>
@@ -42,7 +42,7 @@
     </select>
     <br />
     <label asp-for="Edited">Edited</label>
-    <select asp-for="Edited">
+    <select asp-for="Edited" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
     </select>
@@ -51,7 +51,7 @@
     <input asp-for="LentTo" />
     <br />
     <label asp-for="CopiedToPlex">Copied to Plex?</label>
-    <select asp-for="CopiedToPlex">
+    <select asp-for="CopiedToPlex" required>
         <option value="true">Yes</option>
         <option value="false">No</option>
     </select>

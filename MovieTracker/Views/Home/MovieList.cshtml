@@ -24,7 +24,7 @@
         @foreach (var movie in Model)
         {
             <tr>
-                <td>@movie.Category.CategoryName</td>
+                <td>@movie.Category?.CategoryName</td>
                 <td>@movie.Title</td>
                 <td>@movie.Year</td>
                 <td>@movie.Director</td>
