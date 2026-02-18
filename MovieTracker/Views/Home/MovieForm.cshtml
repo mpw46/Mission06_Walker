@@ -1,4 +1,5 @@
-﻿@*
+﻿@using Mission06_Walker.Models
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -11,11 +12,20 @@
 <br />
 
 <form method="post">
-    <label asp-for="Category">Category</label>
-    <input asp-for="Category" required />
-    <br />
+
+    <input type="hidden" asp-for="MovieId" />
+
     <label asp-for="Title">Title</label>
     <input asp-for="Title" required />
+    <br />
+    <select asp-for="CategoryId">
+        <option value="">Select a Category</option>
+        @foreach (Category c in ViewBag.Categories)
+        {
+            <option value="@c.CategoryId">@c.CategoryName</option>
+        }
+)
+    </select>
     <br />
     <label asp-for="Year">Year</label>
     <input asp-for="Year" required />
@@ -25,10 +35,10 @@
     <br />
     <label asp-for="Rating">Rating</label>
     <select asp-for="Rating" required>
-        <option value="g">G</option>
-        <option value="pg">PG</option>
-        <option value="pg-13">PG-13</option>
-        <option value="r">R</option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
     </select>
     <br />
     <label asp-for="Edited">Edited</label>
@@ -40,8 +50,17 @@
     <label asp-for="LentTo">Lent To</label>
     <input asp-for="LentTo" />
     <br />
+    <label asp-for="CopiedToPlex">Copied to Plex?</label>
+    <select asp-for="CopiedToPlex">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <br />
     <label asp-for="Notes">Notes</label>
     <input asp-for="Notes" maxlength="25"/>
     <br />
     <button type="submit">Add Movie</button>
+
+    <div asp-validation-summary="All"></div>
+
 </form>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mission06_Walker.Models;
 
 namespace MovieTracker.Models
 {
@@ -8,5 +9,6 @@ namespace MovieTracker.Models
         {
         }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
